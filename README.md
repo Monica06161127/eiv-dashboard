@@ -101,7 +101,12 @@ Dashboard 连接 eiv-core 的 HTTP API（默认 `http://127.0.0.1:8000`）：
 - WARN = 黄色 `#d29922`
 - 金额一律用等宽字体 + 字符串显示
 
+## 相关仓库
+- [eiv-core](https://github.com/Monica06161127/eiv-core) — 核心验证逻辑
+- [eiv-contracts](https://github.com/Monica06161127/eiv-contracts) — Solidity 合约和部署脚本
+- [eiv-docs](https://github.com/Monica06161127/eiv-docs) — 项目文档
+
 ## 团队
-- **#2** — Dashboard owner
+- **Kieran** — Dashboard owner
 - **John** — eiv-core API
 - **Luvia** — 运营 / 截图素材
