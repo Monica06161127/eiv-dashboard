@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EIV Dashboard — Execution-Integrity Validator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🔍 EIV Dashboard</h1>
+    <p class="subtitle">Execution-Integrity Validator — Intent vs Execution Diff</p>
+    <div id="api-status" class="status-dot offline">
+      <span class="dot"></span>
+      <span class="label">API: 未连接</span>
+    </div>
+  </header>
+
+  <main>
+    <!-- 验证记录列表 -->
+    <section id="validations-list">
+      <h2>验证记录</h2>
+      <div id="list-controls">
+        <button id="btn-refresh" onclick="refreshList()">🔄 刷新</button>
+        <span id="record-count">0 条记录</span>
+      </div>
+      <div id="records-container">
+        <p class="placeholder">点击「刷新」加载记录，或先启动 eiv-core API：<code>python -m eiv.api --port 8000</code></p>
+      </div>
+    </section>
+
+    <!-- 详情面板（money shot: intent vs execution diff） -->
+    <section id="detail-panel" class="hidden">
+      <h2>📋 验证详情 <span id="detail-id"></span></h2>
+
+      <!-- 判定结果 -->
+      <div id="verdict-banner" class="verdict">—</div>
+
+      <!-- Intent vs Execution Diff（核心 money shot） -->
+      <div class="diff-container">
+        <div class="diff-col">
+          <h3>📝 签章授权 (Intent)</h3>
+          <pre id="intent-view"></pre>
+        </div>
+        <div class="diff-col">
+          <h3>⛓️ 链上执行 (Execution)</h3>
+          <pre id="trace-view"></pre>
+        </div>
+      </div>
+
+      <!-- 违规列表 -->
+      <div id="violations-section">
+        <h3>⚠️ 违规项</h3>
+        <div id="violations-list"></div>
+      </div>
+
+      <!-- Attestation 信息 -->
+      <div id="attestation-section">
+        <h3>📜 ERC-8004 Attestation</h3>
+        <div id="attestation-info"></div>
+      </div>
+
+      <!-- Mock Consumer（reputation → 接受/拒绝） -->
+      <div id="consumer-section">
+        <h3>🚪 Mock Consumer 决策</h3>
+        <div id="consumer-decision"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>EIV = 代购审计师 · AI × Web3 Hackathon · Z.AI 赛道</p>
+    <p>API: <code id="api-url">http://127.0.0.1:8000</code></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
