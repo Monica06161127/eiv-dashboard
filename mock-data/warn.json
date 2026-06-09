@@ -1,0 +1,36 @@
+{
+  "validation_id": "val_warn_001",
+  "tx_ref": "tx_warn_001",
+  "intent": {
+    "spec": {
+      "target": "0x1234567890abcdef1234567890abcdef12345678",
+      "recipient": "0xabcdefabcdefabcdefabcdefabcdefabcdefabcd",
+      "amount": "1000000",
+      "deadline": 1750000000
+    },
+    "signer": "0xUser1234567890abcdef1234567890abcdef1234"
+  },
+  "execution": {
+    "target": "0x1234567890abcdef1234567890abcdef12345678",
+    "recipient": "0xabcdefabcdefabcdefabcdefabcdefabcdefabcd",
+    "amount": "1050000",
+    "deadline": 1750000000
+  },
+  "result": {
+    "verdict": "PASS",
+    "violations": [
+      {
+        "category": "E:Slippage",
+        "severity": "WARN-SAFETY",
+        "detail": "金额略超授权：授权 1000000，实际 1050000（超 5%，在安全范围内）"
+      }
+    ]
+  },
+  "attestation": {
+    "attestation_ref": "0xAttestationHash003",
+    "response": 100,
+    "tag": "EIV.L2.PASS",
+    "verdict": "PASS",
+    "n_violations": 1
+  }
+}

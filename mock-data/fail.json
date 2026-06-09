@@ -1,0 +1,41 @@
+{
+  "validation_id": "val_fail_001",
+  "tx_ref": "tx_bad_001",
+  "intent": {
+    "spec": {
+      "target": "0x1234567890abcdef1234567890abcdef12345678",
+      "recipient": "0xabcdefabcdefabcdefabcdefabcdefabcdefabcd",
+      "amount": "1000000",
+      "deadline": 1750000000
+    },
+    "signer": "0xUser1234567890abcdef1234567890abcdef1234"
+  },
+  "execution": {
+    "target": "0x9999999999999999999999999999999999999999",
+    "recipient": "0xabcdefabcdefabcdefabcdefabcdefabcdefabcd",
+    "amount": "2000000",
+    "deadline": 1750000000
+  },
+  "result": {
+    "verdict": "FAIL",
+    "violations": [
+      {
+        "category": "A:Target",
+        "severity": "FAIL",
+        "detail": "目标合约不匹配：授权 0x1234...5678，实际 0x9999...9999"
+      },
+      {
+        "category": "D:Amount",
+        "severity": "FAIL",
+        "detail": "金额超限：授权 1000000，实际 2000000"
+      }
+    ]
+  },
+  "attestation": {
+    "attestation_ref": "0xAttestationHash002",
+    "response": 0,
+    "tag": "EIV.L2.FAIL",
+    "verdict": "FAIL",
+    "n_violations": 2
+  }
+}

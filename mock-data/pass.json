@@ -1,0 +1,30 @@
+{
+  "validation_id": "val_pass_001",
+  "tx_ref": "tx_clean_001",
+  "intent": {
+    "spec": {
+      "target": "0x1234567890abcdef1234567890abcdef12345678",
+      "recipient": "0xabcdefabcdefabcdefabcdefabcdefabcdefabcd",
+      "amount": "1000000",
+      "deadline": 1750000000
+    },
+    "signer": "0xUser1234567890abcdef1234567890abcdef1234"
+  },
+  "execution": {
+    "target": "0x1234567890abcdef1234567890abcdef12345678",
+    "recipient": "0xabcdefabcdefabcdefabcdefabcdefabcdefabcd",
+    "amount": "1000000",
+    "deadline": 1750000000
+  },
+  "result": {
+    "verdict": "PASS",
+    "violations": []
+  },
+  "attestation": {
+    "attestation_ref": "0xAttestationHash001",
+    "response": 100,
+    "tag": "EIV.L2.PASS",
+    "verdict": "PASS",
+    "n_violations": 0
+  }
+}
